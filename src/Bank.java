@@ -9,32 +9,6 @@ public class Bank {
 
     public static void main(String[] args) {
 
-/*
-        CCurrency c= new CCurrency(TypeOfCurrency.USD);
-        System.out.println(c.converter(100, TypeOfCurrency.RUB));
-
-        System.out.println(c.getCourse());
-        System.out.println(c.getCurrencyName());
-
-        CAccount a= new CAccount(TypeOfCurrency.RUB);
-        System.out.println(a.getAmount());
-*/
-/*        Client x= new Client("user","123");
-        x.createAccount(new Currency(TypeOfCurrency.RUB));
-        x.accounts.get(0).addAmount(100);
-        System.out.println(x.accounts.get(0).getAmount());
-        System.out.println(x.accounts.get(0).getCurrencyName());
-        x.createAccount(new Currency(TypeOfCurrency.USD));
-        x.showAllAсcounts();
-
-        Scanner in = new Scanner(System.in);
-        int num= in.nextInt();
-        x.deleteAccount(num);
-        x.showAllAсcounts();
-        */
-
-
-
     Client test=new Client("q","a");
         int temp=test.createAccount(Currency.USD);
         test.getAccount(temp).addAmount(123);
@@ -53,11 +27,11 @@ public class Bank {
                     break;
 
                 case 1:
-                    interfaceinMenu();
+                    interfaceInMenu();
                     break;
 
                 case 2:
-                    interfaceregMenu();
+                    interfaceRegMenu();
                     break;
 
                     case 3:
@@ -78,7 +52,7 @@ public class Bank {
 
     }
 
-    static void interfaceregMenu(){
+    static void interfaceRegMenu(){
         boolean check=true;
         do {
             Scanner in = new Scanner(System.in);
@@ -99,7 +73,7 @@ public class Bank {
         while(check);
     }
 
-    static void interfaceinMenu(){
+    static void interfaceInMenu(){
         boolean check=true;
         do {
 
@@ -116,7 +90,7 @@ public class Bank {
                 String password = in.next();
                 Client client= (Client) users.get(login);
                 if (client.checkPassword(password)) {
-                    interfaceclientMenu(client);
+                    interfaceClientMenu(client);
                    check=false;
                 }
                 else {
@@ -127,7 +101,7 @@ public class Bank {
         while(check);
     }
 
-    static void interfaceclientMenu(Client client){
+    static void interfaceClientMenu(Client client){
         int input =0;
         do {
             System.out.println("-------------------");
@@ -151,10 +125,9 @@ public class Bank {
                     interfaceClientCreateAccount(client);
                     break;
 
- //               case 3:
- //                   interfaceAddAmount(client);
-  //                  Currency.RUB.setCourse(120);
-  //                  break;
+                case 3:
+                    interfaceAddAmount(client);
+                    break;
 
 
                 default:
