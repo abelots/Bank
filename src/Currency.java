@@ -3,22 +3,22 @@ public enum Currency {
     USD(2),
     EUR(3);
 
-    double course;
+    double rate;
 
-    Currency(double course) {
-        this.course = course;
+    Currency(double rate) {
+        this.rate = rate;
     }
 
-    public void setCourse(double course) {
-        this.course = course;
+    public void setRate(double rate) {
+        this.rate = rate;
     }
 
-    public double getCourse() {
-        return course;
+    public double getRate() {
+        return rate;
     }
 
     public double converter(double amount, Currency fromCurrency, Currency toCurrency){
-        return amount*fromCurrency.getCourse()/toCurrency.getCourse();
+        return amount*fromCurrency.getRate()/toCurrency.getRate();
     }
 
 }
